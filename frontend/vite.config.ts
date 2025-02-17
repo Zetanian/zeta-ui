@@ -14,6 +14,8 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 // rollup
 import { visualizer } from "rollup-plugin-visualizer";
 
+// tailwind
+import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig(({ command, mode, ssrBuild }) => {
@@ -28,6 +30,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     },
     plugins: [
       vueDevTools(),
+      tailwindcss(),
       VueRouter({
         dts: '.autoimports/typed-router.d.ts'
       }),

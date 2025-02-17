@@ -1,13 +1,19 @@
-<script setup></script>
+<script setup>
+
+onBeforeRouteUpdate((nav) => {
+  console.log("Called", nav)
+})
+
+</script>
 
 <template>
-  <div >
+  <div>
     <LayoutJumbotron></LayoutJumbotron>
-    <Services></Services>
-    <Appointment></Appointment>
-    <Subscribe></Subscribe>
-    <Ethos></Ethos>
-    <Contactus></Contactus>
-    <LayoutTheFooter></LayoutTheFooter>
+    <Services v-motion-fade-visible-once></Services>
+    <Principles v-motion-fade-visible-once></Principles>
+    <Appointment v-motion-fade-visible-once></Appointment>
+    <Subscribe v-motion-fade-visible-once></Subscribe>
+    <Contactus v-motion-fade-visible-once></Contactus>
+    <LayoutTheFooter v-motion-fade-visible-once></LayoutTheFooter>
   </div>
 </template>

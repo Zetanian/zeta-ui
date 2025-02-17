@@ -8,11 +8,14 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Appointment: typeof import('./../src/components/appointment.vue')['default']
+    Card: typeof import('./../src/components/card.vue')['default']
+    Carousel: typeof import('./../src/components/Carousel/index.vue')['default']
+    CarouselItem: typeof import('./../src/components/Carousel/Item.vue')['default']
     Contactus: typeof import('./../src/components/contactus.vue')['default']
-    Ethos: typeof import('./../src/components/ethos.vue')['default']
     LayoutJumbotron: typeof import('./../src/components/layout/jumbotron.vue')['default']
     LayoutTheFooter: typeof import('./../src/components/layout/theFooter.vue')['default']
     LayoutTheHeader: typeof import('./../src/components/layout/theHeader.vue')['default']
+    Principles: typeof import('./../src/components/principles.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Services: typeof import('./../src/components/services.vue')['default']

@@ -3,46 +3,38 @@ const appData = useAppStore()
 </script>
 
 <template>
-  <div class="jumbotron px-16 pt-4 pb-16">
-    <div class="text-6xl text-center py-16">Discover Elite Career Opportunities</div>
-
+  <div
+    class="bg-orange-100 px-16 pt-16 pb-16"
+    id="about_us"
+  >
+    <div class="text-2xl pt-16 pb-8">Zooming into Potential, Zestfully Driving Excellence</div>
     <div
-      id="jumbotron_image"
-      class="relative"
+      class="flex w-full max-w-4xl mx-auto"
+      v-motion-pop-visible-once
     >
-      <div class="absolute bottom-16 left-8 text-[22px] text-[rgb(235,227,217)] w-2/6">
-        Discover a world where ambition meets elegance in the pursuit of your dream career. Elevate your job
-        search with exclusive insights and refined opportunities tailored for the discerning professional.
-      </div>
+
+      <Carousel>
+        <CarouselItem
+          v-for="item, idx in appData.aboutUs"
+          :key="idx"
+        >
+          <div class="flex">
+            <div class="flex w-4/6 relative overflow-hidden">
+              <img
+                :src="item.img"
+                class="w-full h-[65vh] object-cover [clip-path:polygon(0_0,100%_0,70%_100%,0_100%)]"
+              />
+            </div>
+
+            <div class="flex-1 px-2 flex items-end">
+              <p>
+                {{ item.description }}
+              </p>
+            </div>
+          </div>
+        </CarouselItem>
+      </Carousel>
+
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.jumbotron {
-  background-color: rgb(185, 165, 144);
-}
-
-#jumbotron_image {
-  background-color: rgb(185, 165, 144);
-  width: 100%;
-  height: 100%;
-
-  &:before {
-    content: '';
-    display: block;
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 640px;
-    background-image: url('~/assets/images/imgg-od3-_05zdz1u.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 25%;
-    background-color: rgba(36, 32, 27, 0.5);
-    background-blend-mode: multiply;
-  }
-}
-
-</style>

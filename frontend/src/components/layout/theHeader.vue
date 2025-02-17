@@ -1,28 +1,38 @@
 <script setup>
 const appData = useAppStore()
+const router = useRouter()
+
+function navigate(page) {
+  if (page.type === 'external') {
+    router.push({
+      path: page.path
+    })
+  } else {
+    router.push({ hash: page.hash })
+  }
+}
 </script>
 
 <template>
-  <div class="header px-16 py-4">
+  <div class=" bg-orange-100 px-16 py-4 fixed top-0 w-full z-100">
     <div class="title-bar text-xl flex justify-between">
-      <div>{{ appData.appName }}</div>
-      <div class="nav text-base hover:cursor-pointer">
-        <span
+      <router-link
+        to="#about_us"
+        class="text-4xl"
+      >
+      {{ appData.appName }}
+    </router-link>
+      <div class="nav text-base flex items-center">
+        <button
           v-for="page, idx in appData.pages"
           :key="idx"
-          class="mr-4"
+          class="mr-4 cursor-pointer"
+          @click=navigate(page)
         >
-          {{ page }}
-        </span>
+          {{ page.name }}
+        </button>
       </div>
     </div>
-    </div>
+  </div>
 </template>
 
-<style lang="scss" scoped>
-.header {
-  background-color: rgb(185, 165, 144);
-  color: rgb(54, 48, 42)
-}
-
-</style>

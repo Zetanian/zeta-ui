@@ -3,10 +3,10 @@ const appData = useAppStore()
 </script>
 
 <template>
-  <div class="appointment px-16 py-24">
+  <div class="bg-orange-100 px-16 py-24">
 
     <div class="flex gap-16">
-      <div class="w-1/2">
+      <div class="w-1/2" v-motion-pop-visible-once>
         <div class="title text-6xl mb-8 font-semibold">Reserve an appointment</div>
         <div class="mb-8">Experience unparalleled professionalism and personalized service when you book an
           appointment
@@ -15,7 +15,10 @@ const appData = useAppStore()
         <img src="@/assets/images/imgg-od3-kdsff4xv.png" />
       </div>
 
-      <div class="w-1/2">
+      <div
+        class="w-1/2"
+        v-motion-slide-visible-once-right
+      >
         <div class="bg-white p-4 mb-4">
           <div class="text-right text-xs">Returning? <span class="underline">Log in</span></div>
           <div class="h-8 my-6">
@@ -33,7 +36,7 @@ const appData = useAppStore()
               <div class="appointment__description font-light">{{ appointment.description }}</div>
             </div>
             <div class="w-2/6 flex items-center justify-end  ">
-              <button class="bg-black text-white mr-2 w-[112px] py-1 rounded">Book</button>
+              <button class="bg-black text-white mr-2 w-[112px] py-1 rounded-sm">Book</button>
             </div>
           </div>
         </div>
