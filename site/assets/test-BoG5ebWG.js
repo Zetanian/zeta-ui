@@ -1,0 +1,1 @@
+import{P as s,c as r,f as n,u as a,o as u}from"./vue-CVv6yyIA.js";const f={__name:"test",setup(l){const t=a();return s(e=>{console.log("Called",e)}),(e,o)=>(u(),r("div",{onClick:o[0]||(o[0]=c=>n(t).push("/"))}," TEST "))}};export{f as default};
