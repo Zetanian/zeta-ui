@@ -14,14 +14,14 @@ function navigate(page) {
 </script>
 
 <template>
-  <div class=" bg-orange-100 px-16 py-4 fixed top-0 w-full z-100">
+  <div class="h-[72px] bg-orange-100 px-16 py-4 w-full z-100 ">
     <div class="title-bar text-xl flex justify-between">
       <router-link
         to="#about_us"
         class="text-4xl"
       >
-      {{ appData.appName }}
-    </router-link>
+        {{ appData.appName }}
+      </router-link>
       <div class="nav text-base flex items-center">
         <button
           v-for="page, idx in appData.pages"

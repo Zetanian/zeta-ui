@@ -18,7 +18,7 @@ export const useAppStore = defineStore("app", {
       },
       {
         name: 'Blog',	
-        hash: 'blog',
+        hash: '#blog',
       },
       {
         name: 'Contact Us',
@@ -42,21 +42,39 @@ export const useAppStore = defineStore("app", {
     services: [
       {
         name: 'Operational Excellence',
+        icon: 'fa:cogs',
+        color: 'text-blue-600',
+        description: 'We leverage cutting-edge technologies, industry best practices, and process optimization to ensure seamless workflow automation, risk mitigation, and service excellence.'
       },
       {
         name: 'Team Collaberation',
+        icon: 'fa6-solid:users',
+        color: 'text-green-600',
+        description: 'We foster synergy and cross-functional teamwork, enabling a culture of transparency, knowledge sharing, and innovation-driven solutions.'
       },
       {
         name: 'Sustained Relationship',
+        icon: 'fa6-solid:handshake',
+        color: 'text-yellow-600',
+        description: 'Our approach emphasizes strategic partnerships, customer satisfaction, and value-driven solutions that create a foundation for continuous growth and digital excellence.'
       },
       {
         name: 'Productivity and Synergy',
+        icon: 'fa6-solid:chart-line',
+        color: 'text-red-600',
+        description: 'Maximizing efficiency through agile methodologies, automation, and performance-driven strategies to ensure scalability and business resilience.'
       },
       {
         name: 'Training and Empowerment',
+        icon: 'fa6-solid:chalkboard-user',
+        color: 'text-sky-600',
+        description: 'Empowering our workforce and clients with upskilling programs, workshops, and leadership coaching to enhance problem-solving skills and digital capabilities.'
       },
       {
         name: 'Future-Proof Leadership and Culture',
+        icon: 'fa6-solid:lightbulb',
+        color: 'text-gray-600',
+        description: 'We cultivate adaptive leadership, strategic foresight, and a culture of innovation to prepare businesses for emerging technologies and industry disruptions.'
       }
     ],
     appointments: [

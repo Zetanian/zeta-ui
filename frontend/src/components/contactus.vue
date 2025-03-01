@@ -3,7 +3,11 @@ const appData = useAppStore()
 </script>
 
 <template>
-  <div class="bg-orange-200 px-16 py-24 flex gap-6" id="contact_us">
+  <!--  -->
+  <div
+    class="bg-orange-200 px-16 py-24 flex gap-6"
+    id="contact_us"
+  >
     <div class="w-1/2 px-8 ">
       <div class="subscribe__title text-6xl font-medium mb-6">Contact Us</div>
       <div class="mb-8">

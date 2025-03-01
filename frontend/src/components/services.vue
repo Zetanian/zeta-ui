@@ -3,12 +3,13 @@ const appData = useAppStore()
 </script>
 
 <template>
+  <!-- -->
   <div
-    class="bg-orange-200 bg-opacity-75 px-16 py-24"
+    class=" bg-opacity-75 px-16 py-24 bg-orange-200 "
     id="what_we_are"
   >
-
-    <div class="title mb-16 text-5xl font-medium">What we are</div>
+    <!-- text-blue-700 -->
+    <div class="font-medium text-4xl pb-16 ">What we are</div>
 
     <!-- <-- Should be converted to Box contianer -->
     <div class="flex flex-wrap gap-8 justify-center px-4">
@@ -16,40 +17,24 @@ const appData = useAppStore()
         v-motion-slide-visible-once-left
         v-for="service, idx in appData.services"
         :key="idx"
-        class="flex justify-center"
+        class="flex justify-center flex-col p-4"
       >
-        <div class="flex justify-center items-center h-[60%]">
-          <div class="relative h-24 w-24 bg-gray-200 rounded-full justify-center items-center">
-            <Icon
-              class="card-icon"
-              :icon="service.icon"
-              v-if="service.icon"
-            ></Icon>
-            <Icon
-              class="card-icon"
-              icon="line-md:question"
-              v-else
-            ></Icon>
-          </div>
+        <div class="w-full flex justify-center items-center h-[120px]">
+          <Icon
+            :icon="service.icon"
+            v-if="service.icon"
+            :class="`w-[64px] h-[64px] ${service.color}`"
+          ></Icon>
         </div>
 
-        <div class="h-[40%] font-medium px-4 flex items-center justify-center">
-          <span>{{ service.name }}</span>
+        <div
+          class="font-medium text-lg p-4  flex items-center justify-center"
+          :class="`${service.color}`"
+        >
+          {{ service.name }}
         </div>
-        <!-- <div class="service__description mb-8">{{ service.description }}</div> -->
-        <!-- <div class="service__link underline absolute bottom-0">Learn More</div> -->
+        <div class="text-sm">{{ service.description }}</div>
       </card>
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.card-icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-
-</style>

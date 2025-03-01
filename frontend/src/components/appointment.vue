@@ -3,11 +3,15 @@ const appData = useAppStore()
 </script>
 
 <template>
-  <div class="bg-orange-100 px-16 py-24">
+  <!-- bg-orange-100 -->
+  <div class=" px-16 py-24">
 
     <div class="flex gap-16">
-      <div class="w-1/2" v-motion-pop-visible-once>
-        <div class="title text-6xl mb-8 font-semibold">Reserve an appointment</div>
+      <div
+        class="w-1/2"
+        v-motion-pop-visible-once
+      >
+        <div class="font-medium text-4xl pb-12 text-blue-700">Reserve<br/> an appointment</div>
         <div class="mb-8">Experience unparalleled professionalism and personalized service when you book an
           appointment
           with us—where

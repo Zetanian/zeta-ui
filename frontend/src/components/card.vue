@@ -16,10 +16,12 @@
 
 
 <style lang="css" scoped>
+    /* box-shadow: 20px 20px 40px var(--color-blue-100),
+    -20px -20px 40px var(--color-blue-200); */
 .card {
   position: relative;
-  width: 200px;
-  height: 250px;
+  width: 300px;
+  height: 340px;
   border-radius: 14px;
   z-index: 1111;
   overflow: hidden;
@@ -39,8 +41,8 @@
   position: absolute;
   top: 5px;
   left: 5px;
-  width: 190px;
-  height: 240px;
+  width: 290px;
+  height: 330px;
   z-index: 2;
   background: rgba(255, 255, 255, .95);
   backdrop-filter: blur(24px);
@@ -49,13 +51,14 @@
   outline: 2px solid white;
 }
 
+    /* background-color: var(--color-blue-700); */
 .blob {
   position: absolute;
   z-index: 1;
   top: 50%;
   left: 50%;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background-color: #ff0000;
   opacity: 1;

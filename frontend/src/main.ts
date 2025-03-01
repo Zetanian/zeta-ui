@@ -1,13 +1,14 @@
+// @ts-nocheck
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 
 import { Icon } from '@iconify/vue';
 import { createPinia } from 'pinia'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 import { MotionPlugin } from '@vueuse/motion'
-
+import { nextTick } from 'vue'
 
 const vueApp = createApp(App)
 
@@ -15,25 +16,23 @@ vueApp.component('Icon', Icon)
 
 const pinia = createPinia()
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes,
     scrollBehavior(to, from, savedPosition) {
-        if (to.hash) {
-            // Scroll to the element with the ID matching the hash
-            return {
-                el: to.hash,
-                behavior: 'smooth', // Optional: Add smooth scrolling
-                top: 60,
-            };
-        } else if (savedPosition) {
-            // Restore saved position (e.g., when navigating back)
-            return savedPosition;
-        } else {
-            // Scroll to the top of the page
-            return { top: 0 };
-        }
+        console.log("Scroll Behavior Triggered", to.hash);
+
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                const element = document.querySelector(to.hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+                resolve({ top: 60 });
+            }, 300); // Delay to ensure rendering is done
+        });
     },
-})
+});
+
 
 pinia.use(({ store }) => {
     store.router = markRaw(router)
