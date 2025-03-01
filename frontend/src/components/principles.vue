@@ -4,7 +4,7 @@ const appData = useAppStore()
 
 <template>
   <div
-    class="bg-orange-100 px-16 py-24"
+    class="px-16 py-12"
     id="what_we_do"
   >
     <!-- text-blue-700 -->
@@ -27,7 +27,7 @@ const appData = useAppStore()
           {{ principle.name }}
         </div>
         <div class="my-8">{{ principle.description }}</div>
-        <button class="bg-zinc-800 text-white text-base w-[120px] py-2 rounded-sm">Learn More</button>
+        <button class="bg-purple-700 text-white text-base w-[120px] py-2 rounded-sm">Learn More</button>
       </div>
     </div>
 
@@ -36,11 +36,11 @@ const appData = useAppStore()
 
 <style lang="css" scoped>
 .service-card {
-  border-radius: 50px;
+  border-radius: 20px;
   /* box-shadow: 10px 10px 15px var(--color-blue-100), -10px -10px 15px var(--color-blue-100); */
 
-  background: var(--color-orange-50);
-  box-shadow: 20px 20px 60px var(--color-orange-200),
-    -20px -20px 60px var(--color-orange-100);
+  background: var(--color-purple-50);
+  box-shadow: 20px 20px 60px var(--color-gray-200),
+    -20px -20px 60px var(--color-gray-100);
 }
 </style>

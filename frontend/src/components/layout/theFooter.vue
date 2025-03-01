@@ -3,7 +3,7 @@ const appData = useAppStore()
 </script>
 
 <template>
-  <footer class=" bg-orange-100">
+  <footer class="px-16">
     <div class="max-w-7xl mx-auto px-5 flex flex-wrap gap-8 justify-between pt-16 pb-8">
       <!-- About Section -->
       <div class="w-7/12 mb-5">
@@ -79,7 +79,7 @@ const appData = useAppStore()
     <!-- Motto and Copyright -->
     <div class="text-center mt-5 pt-5 border-t border-[#555] pb-4">
       <p class="font-bold">"Organize. Optimize. Synergize."</p>
-      <p class="text-sm">© 2024 Zetanium. All Rights Reserved.</p>
+      <p class="text-sm">© 2025 Zetanium. All Rights Reserved.</p>
     </div>
   </footer>
 </template>

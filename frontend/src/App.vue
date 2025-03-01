@@ -4,9 +4,7 @@
 <template>
   <div class="font-poppins text-zinc-700 h-full">
     <LayoutTheHeader></LayoutTheHeader>
-    <div class="h-[calc(100vh-72px)] overflow-y-auto overflow-x-hidden">
-      <RouterView></RouterView>
-    </div>
+    <RouterView></RouterView>
   </div>
 </template>
 
@@ -17,21 +15,21 @@
 
 /* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-orange-100);
-  border-radius: 10px;
+  background: var(--color-purple-100);
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-orange-500);
-  border-radius: 10px;
+  background: var(--color-purple-500);
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-orange-500);
+  background: var(--color-purple-800);
 }
 
 </style>

@@ -7,7 +7,9 @@ onBeforeRouteUpdate((nav) => {
 </script>
 
 <template>
-  <div>
+  <div
+    class="bg-linear-to-br from-purple-200 via-purple-50 to-white h-[calc(100vh-72px)] overflow-y-auto overflow-x-hidden"
+  >
     <LayoutJumbotron></LayoutJumbotron>
     <Services v-motion-fade-visible-once></Services>
     <Principles v-motion-fade-visible-once></Principles>

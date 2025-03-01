@@ -14,7 +14,7 @@ function navigate(page) {
 </script>
 
 <template>
-  <div class="h-[72px] bg-orange-100 px-16 py-4 w-full z-100 ">
+  <div class="h-[72px] bg-purple-900 px-16 py-4 w-full z-100 text-white ">
     <div class="title-bar text-xl flex justify-between">
       <router-link
         to="#about_us"

@@ -5,7 +5,7 @@ const appData = useAppStore()
 <template>
   <!-- -->
   <div
-    class=" bg-opacity-75 px-16 py-24 bg-orange-200 "
+    class=" bg-opacity-75 px-16 py-12 "
     id="what_we_are"
   >
     <!-- text-blue-700 -->

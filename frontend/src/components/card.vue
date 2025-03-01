@@ -60,7 +60,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: #ff0000;
+  background-color: var(--color-purple-500);
   opacity: 1;
   filter: blur(12px);
   animation: blob-bounce 5s infinite linear;

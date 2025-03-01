@@ -5,11 +5,11 @@ const appData = useAppStore()
 <template>
   <!--  -->
   <div
-    class="bg-orange-200 px-16 py-24 flex gap-6"
+    class="px-16 py-24 flex gap-6"
     id="contact_us"
   >
     <div class="w-1/2 px-8 ">
-      <div class="subscribe__title text-6xl font-medium mb-6">Contact Us</div>
+      <div class="font-medium text-4xl pb-4">Contact Us</div>
       <div class="mb-8">
         Interested in working together? Fill out some info and we will be in touch shortly. We can’t wait to hear from
         you!
@@ -47,7 +47,7 @@ const appData = useAppStore()
         </div>
       </div>
 
-      <button class="bg-black text-white w-[108px] py-2 rounded-lg">Send</button>
+      <button class="bg-purple-700 text-white w-[108px] py-2 rounded-lg">Send</button>
     </div>
 
   </div>

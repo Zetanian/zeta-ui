@@ -3,9 +3,7 @@ const appData = useAppStore()
 </script>
 
 <template>
-  <!-- bg-orange-100 -->
   <div class=" px-16 py-24">
-
     <div class="flex gap-16">
       <div
         class="w-1/2"
