@@ -1,0 +1,45 @@
+// @ts-nocheck
+import { createApp } from 'vue'
+import './style.css'
+import App from './App.vue'
+
+import { Icon } from '@iconify/vue';
+import { createPinia } from 'pinia'
+import { createRouter, createWebHistory } from 'vue-router'
+import { routes } from 'vue-router/auto-routes'
+import { MotionPlugin } from '@vueuse/motion'
+import { nextTick } from 'vue'
+
+const vueApp = createApp(App)
+
+vueApp.component('Icon', Icon)
+
+const pinia = createPinia()
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        console.log("Scroll Behavior Triggered", to.hash);
+
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                const element = document.querySelector(to.hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+                resolve({ top: 60 });
+            }, 300); // Delay to ensure rendering is done
+        });
+    },
+});
+
+
+pinia.use(({ store }) => {
+    store.router = markRaw(router)
+})
+
+vueApp.use(pinia)
+vueApp.use(router)
+vueApp.use(MotionPlugin)
+
+vueApp.mount('#app')
