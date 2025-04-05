@@ -1,18 +1,32 @@
 <script setup>
+import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
+
 const appData = useAppStore()
+const breakpoints = useBreakpoints(breakpointsTailwind)
+
+// Dynamically determine icon size based on breakpoints
+const iconSize = computed(() => {
+  if (breakpoints.greaterOrEqual('md').value) {
+    return 32
+  } else if (breakpoints.greaterOrEqual('sm').value) {
+    return 24
+  } else {
+    return 16
+  }
+})
 </script>
 
 <template>
   <!-- -->
   <div
-    class=" bg-opacity-75 px-16 py-12 "
+    class="bg-opacity-75 px-4 md:px-16 py-12"
     id="what_we_are"
   >
     <!-- text-blue-700 -->
-    <div class="font-medium text-4xl pb-16 ">What we are</div>
+    <div class="font-medium text-4xl pb-16 text-center md:text-left">What we are</div>
 
-    <!-- <-- Should be converted to Box contianer -->
-    <div class="flex flex-wrap gap-8 justify-center px-4">
+    <!-- Should be converted to Box contianer -->
+    <div class="flex flex-wrap gap-8 justify-center">
       <card
         v-motion-slide-visible-once-left
         v-for="service, idx in appData.services"

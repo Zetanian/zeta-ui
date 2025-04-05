@@ -3,10 +3,10 @@ const appData = useAppStore()
 </script>
 
 <template>
-  <footer class="px-16">
+  <footer class="px-4 md:px-16">
     <div class="max-w-7xl mx-auto px-5 flex flex-wrap gap-8 justify-between pt-16 pb-8">
       <!-- About Section -->
-      <div class="w-7/12 mb-5">
+      <div class="md:w-7/12 mb-5">
         <h3 class="text-lg font-bold mb-2">About Zetanium</h3>
         <p class="text-sm">
           Zetanium stands as a premier partner in IT services and staffing solutions, dedicated to bridging exceptional
@@ -16,8 +16,8 @@ const appData = useAppStore()
       </div>
 
       <!-- Quick Links -->
-      <div class="w-2/12 mb-5">
-        <h3 class=" text-lg font-bold mb-2">Quick Links</h3>
+      <div class="hidden md:block w-2/12 mb-5">
+        <h3 class="text-lg font-bold mb-2">Quick Links</h3>
         <ul class="list-none p-0">
           <li><router-link
               to="#about_us"
@@ -44,13 +44,13 @@ const appData = useAppStore()
         <div class="text-sm">
           <div class="font-medium">Zetanium Global</div>
           2588 Vicksburg Ln<br>
-          Aurora, IL 60503<br>
-          <span class="font-medium">Phone:</span> +1-800-ZETANIUM<br>
+          Aurora, IL 60503<br><br>
+          <span class="font-medium">Phone:</span> 9296301231<br>
           <span class="font-medium">Email:</span>
           <a
-            href="mailto:info@zetanium.com"
+            href="mailto:zetaniumglobal@gmail.com"
             class="no-underline hover:underline"
-          >info@zetanium.com</a>
+          >zetaniumglobal@gmail.com</a>
         </div>
       </div>
     </div>
@@ -67,8 +67,9 @@ const appData = useAppStore()
         class="mx-2 no-underline hover:underline"
       >Twitter</a> |
       <a
-        href="#"
+        href="https://www.linkedin.com/company/zetanium"
         class="mx-2 no-underline hover:underline"
+        target="_blank"
       >LinkedIn</a> |
       <a
         href="#"

@@ -9,6 +9,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 import { MotionPlugin } from '@vueuse/motion'
 import { nextTick } from 'vue'
+import { tabPaneProps } from 'element-plus';
 
 const vueApp = createApp(App)
 
@@ -22,6 +23,11 @@ const router = createRouter({
         console.log("Scroll Behavior Triggered", to.hash);
 
         return new Promise((resolve) => {
+            if (!to.hash) {
+                resolve()
+                return
+            }
+
             setTimeout(() => {
                 const element = document.querySelector(to.hash);
                 if (element) {

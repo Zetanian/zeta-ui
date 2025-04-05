@@ -9,10 +9,6 @@
 </template>
 
 <style lang="scss">
-#app {
-  height: 100vh;
-}
-
 /* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 8px;

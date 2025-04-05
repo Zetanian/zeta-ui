@@ -1,7 +1,4 @@
 <script setup>
-
-
-
 </script>
 
 <template>
@@ -20,8 +17,8 @@
     -20px -20px 40px var(--color-blue-200); */
 .card {
   position: relative;
-  width: 300px;
-  height: 340px;
+  width: 280px;
+  height: 360px;
   border-radius: 14px;
   z-index: 1111;
   overflow: hidden;
@@ -41,8 +38,8 @@
   position: absolute;
   top: 5px;
   left: 5px;
-  width: 290px;
-  height: 330px;
+  width: 270px;
+  height: 350px;
   z-index: 2;
   background: rgba(255, 255, 255, .95);
   backdrop-filter: blur(24px);
