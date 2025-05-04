@@ -16,11 +16,11 @@ declare module 'vue' {
     LayoutJumbotron: typeof import('./../src/components/layout/jumbotron.vue')['default']
     LayoutTheFooter: typeof import('./../src/components/layout/theFooter.vue')['default']
     LayoutTheHeader: typeof import('./../src/components/layout/theHeader.vue')['default']
-    LoadingOverlay: typeof import('./../src/components/LoadingOverlay.vue')['default']
     Principles: typeof import('./../src/components/principles.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Services: typeof import('./../src/components/services.vue')['default']
     Subscribe: typeof import('./../src/components/subscribe.vue')['default']
+    VModal: typeof import('./../src/components/VModal/index.vue')['default']
   }
 }

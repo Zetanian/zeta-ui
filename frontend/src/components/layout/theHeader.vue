@@ -9,7 +9,7 @@ function navigate(page) {
       path: page.path
     })
   } else {
-    router.push({ hash: page.hash })
+    router.push({ path: '/', hash: page.hash })
   }
 }
 
@@ -22,7 +22,7 @@ function toggleMenu() {
   <div class="h-[64px]  bg-purple-900 px-4 md:px-16 py-4 w-full z-100 text-white">
     <div class="title-bar text-xl flex justify-between items-center">
       <router-link
-        to="#about_us"
+        to="/#about_us"
         class="text-4xl text-white w-full text-center md:w-1/4 md:text-left"
       >
         <!-- {{ appData.appName }} -->
