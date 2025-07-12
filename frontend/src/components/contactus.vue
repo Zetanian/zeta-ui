@@ -18,6 +18,12 @@ const lastName = ref('')
 const email = ref('')
 const desiredRole = ref('')
 const fileUploadRef = ref(null)
+const isTCAgreed = ref(false)
+const isPrivacyPolicyAgreed = ref(false)
+
+// modal controllers
+const showTC = ref(false)
+const showPrivacy = ref(false)
 
 const debouncedEmail = useDebounce(email, 300)
 const isEmailValid = computed(() => {
@@ -36,7 +42,9 @@ const isFormValid = computed(() => {
     lastName.value &&
     isEmailValid.value &&
     desiredRole.value &&
-    fileUploadRef.value?.file
+    fileUploadRef.value?.file &&
+    isTCAgreed.value &&
+    isPrivacyPolicyAgreed.value
   )
 })
 
@@ -156,17 +164,46 @@ const submitForm = async () => {
         <FileUpload ref="fileUploadRef" />
       </div>
 
+      
+      <div class="my-4 h-6 flex items-center">
+        <input
+          type="checkbox"
+          class="mr-2 w-4 h-4"
+          v-model="isTCAgreed"
+        />
+        <label>Agree to <span class="cursor-pointer underline" @click="showTC = true">Terms & Conditions</span></label>
+        <VModal v-model:visible="showTC">
+          <TermAndConditions></TermAndConditions>
+          <button class="bg-purple-700 float-right text-white mr-2 w-[112px] py-1 rounded-sm cursor-pointer"
+            @click="showTC = false">Close</button>
+        </VModal>
+      </div>
+
+      <div class="my-4 h-6 flex items-center">
+        <input
+          type="checkbox"
+          class="mr-2 w-4 h-4"
+          v-model="isPrivacyPolicyAgreed"
+        />
+        <label>Agree to <span class="cursor-pointer underline" @click="showPrivacy = true">Privacy Policy</span></label>
+        <VModal v-model:visible="showPrivacy">
+          <PrivacyPolicy></PrivacyPolicy>
+          <button class="bg-purple-700 float-right text-white mr-2 w-[112px] py-1 rounded-sm cursor-pointer"
+            @click="showPrivacy = false">Close</button>
+        </VModal>
+      </div>
+
       <button
         @click="submitForm"
-        class="bg-purple-700 text-white w-[108px] py-2 rounded-lg hover:bg-purple-800 transition duration-200"
+        class="bg-purple-700 text-white w-[180px] py-2 rounded-lg hover:bg-purple-800 transition duration-200"
         :disabled="!isFormValid"
         :class="{
           'bg-purple-700 cursor-pointer': isFormValid,
-          'bg-gray-400 cursor-not-allowed': !isFormValid
+          '!bg-gray-400 cursor-not-allowed': !isFormValid
         }"
         :title="!isFormValid ? 'Fill in all details and select resume to upload' : ''"
       >
-        Upload
+        Upload & Subscribe
       </button>
     </div>
 

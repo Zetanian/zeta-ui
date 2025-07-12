@@ -1,6 +1,7 @@
 <script setup lang="ts">
 </script>
 
+<!-- <div class="font-anek-latin text-white h-screen py-10 bg-slate-950"></div> -->
 <template>
   <div class="font-poppins text-zinc-700 h-full">
     <LayoutTheHeader></LayoutTheHeader>

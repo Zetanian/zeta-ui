@@ -13,8 +13,7 @@
 
 
 <style lang="css" scoped>
-    /* box-shadow: 20px 20px 40px var(--color-blue-100),
-    -20px -20px 40px var(--color-blue-200); */
+
 .card {
   position: relative;
   width: 280px;
