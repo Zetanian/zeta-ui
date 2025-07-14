@@ -9,12 +9,13 @@ layer(base);
 @theme {
   --font-*: initial;
   --font-poppins:
-    Poppins, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    Poppins, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
   --font-anek-latin:
-    'Anek Latin', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    'Anek Latin', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
   --animate-zigzac: zigzac 2s linear infinite;
+  --shadow-rnd: 0 2px 22px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
 
   @keyframes zigzac {
     0% {
@@ -30,4 +31,8 @@ layer(base);
       transform: scaleX(0);
     }
   }
+}
+
+.app-max-width {
+  @apply max-w-5xl;
 }

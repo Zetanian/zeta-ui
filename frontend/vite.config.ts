@@ -12,7 +12,7 @@ import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 
 // rollup
-import { visualizer } from "rollup-plugin-visualizer";
+import { visualizer } from 'rollup-plugin-visualizer'
 
 // tailwind
 import tailwindcss from '@tailwindcss/vite'
@@ -25,14 +25,14 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
-        '~': fileURLToPath(new URL('./src', import.meta.url))
-      }
+        '~': fileURLToPath(new URL('./src', import.meta.url)),
+      },
     },
     plugins: [
       vueDevTools(),
       tailwindcss(),
       VueRouter({
-        dts: '.autoimports/typed-router.d.ts'
+        dts: '.autoimports/typed-router.d.ts',
       }),
       vue(),
       AutoImport({
@@ -44,15 +44,8 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
           /\.vue\?vue/, // .vue
           /\.md$/, // .md
         ],
-        dirs: [
-          './src/stores/**',
-          './src/composables'
-        ],
-        imports: [
-          'vue',
-          VueRouterAutoImports,
-          '@vueuse/core',
-        ],
+        dirs: ['./src/stores/**', './src/composables'],
+        imports: ['vue', VueRouterAutoImports, '@vueuse/core'],
       }),
       Components({
         dts: '.autoimports/components.d.ts',
@@ -60,8 +53,8 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         directoryAsNamespace: true,
       }),
       visualizer({
-        filename: 'stats.nogit.html'
-      })
+        filename: 'stats.nogit.html',
+      }),
     ],
     css: {
       preprocessorOptions: {
@@ -71,7 +64,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
             // ...
           ],
         },
-      }
+      },
     },
     build: {
       rollupOptions: {
@@ -81,13 +74,13 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
               '@vueuse/core',
               '@vueuse/integrations/useAxios',
               '@vueuse/integrations/useSortable',
-              '@vueuse/integrations/useChangeCase'
+              '@vueuse/integrations/useChangeCase',
             ],
             vue: ['vue', 'vue-router', 'pinia'],
             elementPlus: ['element-plus'],
-          }
+          },
         },
-      }
-    }
+      },
+    },
   }
 })

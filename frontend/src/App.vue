@@ -1,32 +1,27 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
-<!-- <div class="font-anek-latin text-white h-screen py-10 bg-slate-950"></div> -->
+<!-- </div> -->
 <template>
-  <div class="font-poppins text-zinc-700 h-full">
-    <LayoutTheHeader></LayoutTheHeader>
-    <RouterView></RouterView>
-  </div>
+  <RouterView />
 </template>
 
 <style lang="scss">
-/* For WebKit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-purple-100);
-  border-radius: 8px;
+  background: var(--color-slate-950);
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-purple-500);
-  border-radius: 8px;
+  background: var(--color-amber-400);
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-purple-800);
+  background: var(--color-amber-500);
+  cursor: pointer;
 }
-
 </style>

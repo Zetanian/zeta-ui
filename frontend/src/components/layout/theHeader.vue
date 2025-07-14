@@ -1,41 +1,38 @@
 <script setup>
 const appData = useAppStore()
 const router = useRouter()
-const isMenuOpen = ref(false);
+const isMenuOpen = ref(false)
 
 function navigate(page) {
   if (page.type === 'external') {
     router.push({
-      path: page.path
+      path: page.path,
     })
   } else {
     router.push({ path: '/', hash: page.hash })
   }
 }
 
-function toggleMenu() {
-  isMenuOpen.value = !isMenuOpen.value;
-}
+// function toggleMenu() {
+//   isMenuOpen.value = !isMenuOpen.value;
+// }
 </script>
 <!-- bg-purple-900 -->
 <template>
-  <div class="h-[64px]  bg-purple-900 px-4 md:px-16 py-4 w-full z-100 text-white">
-    <div class="title-bar text-xl flex justify-between items-center">
+  <div class="z-100 h-[64px] w-full bg-purple-900 px-4 py-4 text-white md:px-16">
+    <div class="title-bar flex items-center justify-between text-xl">
       <router-link
         to="/#about_us"
-        class="text-4xl text-white w-full text-center md:w-1/4 md:text-left"
+        class="w-full text-center text-4xl text-white md:w-1/4 md:text-left"
       >
         <!-- {{ appData.appName }} -->
-        <img
-          src="@/assets/zetanium.svg"
-          width="160px"
-        />
+        <img src="@/assets/zetanium.svg" width="160px" />
       </router-link>
 
       <!-- Navigation Links -->
-      <div class="nav text-base md:flex items-center hidden">
+      <div class="nav hidden items-center text-base md:flex">
         <button
-          v-for="page, idx in appData.pages"
+          v-for="(page, idx) in appData.pages"
           :key="idx"
           class="mr-4 cursor-pointer"
           @click="navigate(page)"
@@ -46,14 +43,11 @@ function toggleMenu() {
     </div>
 
     <!-- Mobile Menu -->
-    <div
-      v-if="isMenuOpen"
-      class="md:hidden mt-4"
-    >
+    <div v-if="isMenuOpen" class="mt-4 md:hidden">
       <button
-        v-for="page, idx in appData.pages"
+        v-for="(page, idx) in appData.pages"
         :key="idx"
-        class="block w-full text-left py-2 cursor-pointer"
+        class="block w-full cursor-pointer py-2 text-left"
         @click="navigate(page)"
       >
         {{ page.name }}

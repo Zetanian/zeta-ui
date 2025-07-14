@@ -1,45 +1,26 @@
-<script setup>
-const appData = useAppStore()
-</script>
-
 <template>
-  <!-- -->
   <div
-    class="p-4 md:px-16 py-12"
-    id="about_us"
+    id="hero"
+    class="hero-bg-img flex flex-col items-center justify-center gap-4 pt-[200px] pb-[48px] text-center text-white/90"
   >
-    <div
-      class="flex w-full max-w-4xl mx-auto"
-      v-motion-pop-visible-once
-    >
-      <Carousel>
-        <CarouselItem
-          v-for="item, idx in appData.aboutUs"
-          :key="idx"
-        >
-          <div class="md:flex">
-            <div class="md:w-4/6 mb-4 relative overflow-hidden">
-              <img
-                :src="item.img"
-                class="w-full h-[65vh] object-cover opacity-75 md:[clip-path:polygon(0_0,100%_0,70%_100%,0_100%)] "
-              />
-            </div>
+    <span class="block px-8 text-7xl">Software Development <br />& IT Consulting Company.</span>
+    <br />
+    <span class="block text-3xl">Organize. Optimize. Synergize.</span>
 
-            <div class="flex-1 px-2 flex items-center">
-              <p>
-                <span
-                  class="font-medium block text-2xl pb-8 text-purple-700 mb-2"
-                  v-if="idx == 0"
-                >
-                  Zooming into Potential, Zestfully Driving Excellence
-                </span>
-                {{ item.description }}
-              </p>
-            </div>
-          </div>
-        </CarouselItem>
-      </Carousel>
-
-    </div>
+    <input
+      type="button"
+      value="Get In Touch"
+      class="shadow-rnd mt-8 h-14 w-48 cursor-pointer rounded-md bg-amber-400/80 px-6 py-3 text-2xl font-medium text-slate-950 shadow-amber-400/80 transition duration-300 hover:bg-amber-400"
+    />
   </div>
 </template>
+
+<style scoped lang="scss">
+.hero-bg-img {
+  background-image: url('@/assets/images/hero-bg.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: lighten;
+}
+</style>

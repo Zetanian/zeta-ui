@@ -1,54 +1,57 @@
 <script setup>
-import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
-
 const appData = useAppStore()
-const breakpoints = useBreakpoints(breakpointsTailwind)
-
-// Dynamically determine icon size based on breakpoints
-const iconSize = computed(() => {
-  if (breakpoints.greaterOrEqual('md').value) {
-    return 32
-  } else if (breakpoints.greaterOrEqual('sm').value) {
-    return 24
-  } else {
-    return 16
-  }
-})
 </script>
 
 <template>
   <!-- -->
-  <div
-    class="bg-opacity-75 px-4 md:px-16 py-12"
-    id="what_we_are"
-  >
+  <div id="what_we_are">
     <!-- text-blue-700 -->
-    <div class="font-medium text-4xl pb-16 text-center md:text-left">What we are</div>
+
+    <div class="mb-12 text-center text-4xl font-medium md:text-left">Our Principles</div>
+
+    <!-- <div class="bg-[url(@/assets/images/border-top-left.png)] bg-top-left bg-no-repeat bg-blend-lighten  bg-position-top-left"> -->
+    <!-- Your content here -->
+    <!-- </div> -->
 
     <!-- Should be converted to Box contianer -->
-    <div class="flex flex-wrap gap-8 justify-center">
-      <card
-        v-motion-slide-visible-once-left
-        v-for="service, idx in appData.services"
-        :key="idx"
-        class="flex justify-center flex-col p-4"
-      >
-        <div class="w-full flex justify-center items-center h-[120px]">
-          <Icon
-            :icon="service.icon"
-            v-if="service.icon"
-            :class="`w-[64px] h-[64px] ${service.color}`"
-          ></Icon>
-        </div>
+    <div class="grid grid-cols-3 justify-center gap-8 overflow-clip rounded-xl">
+      <div v-for="(service, idx) in appData.services" :key="idx">
+        <div class="group relative h-48 cursor-pointer rounded-xl transition-all">
+          <div class="absolute right-4 bottom-4 z-10">
+            <Icon
+              v-if="service.icon"
+              :icon="service.icon"
+              class="size-6 text-zinc-300 opacity-50"
+            />
+          </div>
 
-        <div
-          class="font-medium text-lg p-4  flex items-center justify-center"
-          :class="`${service.color}`"
-        >
-          {{ service.name }}
+          <div
+            class="absolute h-24 w-24 rounded-xl bg-purple-500/40"
+            :class="{
+              'top-0 left-0': idx === 0,
+              'left-1/2 -translate-x-1/2 -translate-y-1/2': idx === 1,
+              'top-0 right-0': idx === 2,
+              'bottom-0 left-0': idx === 3,
+              'bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2': idx === 4,
+              'right-0 bottom-0': idx === 5,
+            }"
+          ></div>
+
+          <div class="shadow- h-full rounded-xl bg-zinc-700/10 p-4 backdrop-blur-2xl">
+            <div
+              class="absolute flex items-center justify-center p-4 text-center text-2xl text-zinc-300 opacity-100 transition-all duration-300 ease-in-out group-hover:scale-95 group-hover:opacity-0"
+            >
+              {{ service.name }}
+            </div>
+
+            <div
+              class="absolute flex items-center justify-center p-4 text-center text-zinc-300 opacity-0 transition-all duration-300 ease-in-out group-hover:scale-100 group-hover:opacity-100"
+            >
+              {{ service.description }}
+            </div>
+          </div>
         </div>
-        <div class="text-sm">{{ service.description }}</div>
-      </card>
+      </div>
     </div>
   </div>
 </template>

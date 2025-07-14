@@ -11,11 +11,14 @@ declare module 'vue' {
     Card: typeof import('./../src/components/card.vue')['default']
     Carousel: typeof import('./../src/components/Carousel/index.vue')['default']
     CarouselItem: typeof import('./../src/components/Carousel/Item.vue')['default']
-    Contactus: typeof import('./../src/components/contactus.vue')['default']
+    Contactus: typeof import('../src/components/contactus.vuetus.vue')['default']
+    ContactUs: typeof import('./../src/components/ContactUs.vue')['default']
     FileUpload: typeof import('./../src/components/fileUpload.vue')['default']
+    LayoutFooter: typeof import('./../src/components/layout/footer.vue')['default']
+    LayoutFooterFooter: typeof import('./../src/components/layout/footer/footer.vue')['default']
     LayoutHeader: typeof import('./../src/components/layout/header/index.vue')['default']
     LayoutHeaderMenuItem: typeof import('./../src/components/layout/header/MenuItem.vue')['default']
-    LayoutHeaderServiceMenu: typeof import('./../src/components/layout/header/serviceMenu.vue')['default']
+    LayoutHeaderServiceMenu: typeof import('./../src/components/layout/header/ServiceMenu.vue')['default']
     LayoutJumbotron: typeof import('./../src/components/layout/jumbotron.vue')['default']
     LayoutTheFooter: typeof import('./../src/components/layout/theFooter.vue')['default']
     LayoutTheHeader: typeof import('./../src/components/layout/theHeader.vue')['default']
@@ -27,5 +30,6 @@ declare module 'vue' {
     Subscribe: typeof import('./../src/components/subscribe.vue')['default']
     TermAndConditions: typeof import('./../src/components/termAndConditions.vue')['default']
     VModal: typeof import('./../src/components/VModal/index.vue')['default']
+    ZLink: typeof import('./../src/components/ZLink.vue')['default']
   }
 }
