@@ -127,6 +127,7 @@ const hideDropdown = () => {
     <div class="jusity-center flex items-center">
       <button
         class="hover:shadow-rnd ml-8 flex h-10 w-3/12 flex-1/4 items-center rounded-md border border-white/30 px-4 py-2 text-xl text-white transition hover:cursor-pointer hover:bg-amber-400 hover:text-slate-950 hover:shadow-amber-400 lg:w-1/6"
+        @click="$router.push('/signin')"
       >
         Sign In
       </button>
